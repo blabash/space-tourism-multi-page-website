@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <h1>SPACE TOURISM</h1>
+      <p>check it</p>
     </div>
   );
 }
