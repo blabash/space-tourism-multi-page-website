@@ -1,27 +1,30 @@
 import React from "react";
 import {
+  Link,
   NavLink,
   NavLinkProps,
   Outlet,
   useLocation,
   useSearchParams,
 } from "react-router-dom";
-import { getInvoices } from "../data";
+import { getInvoices } from "../../data";
 
 function QueryNavLink({ to, ...props }: NavLinkProps) {
   let location = useLocation();
   return <NavLink to={to + location.search} {...props} />;
 }
 
-type InvoiceProps = {};
+type DestinationProps = {};
 
-export default function Invoices({}: InvoiceProps) {
+export default function Destinations({}: DestinationProps) {
   let invoices = getInvoices();
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div style={{ display: "flex" }}>
-      <nav
+      <h2>Destinations</h2>
+      <Link to={`/destination/the-moon`}>Moon</Link>
+      {/* <nav
         style={{
           borderRight: "solid 1px",
           padding: "1rem",
@@ -58,7 +61,7 @@ export default function Invoices({}: InvoiceProps) {
               {invoice.name}
             </QueryNavLink>
           ))}
-      </nav>
+      </nav> */}
       <Outlet />
     </div>
   );

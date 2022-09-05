@@ -4,9 +4,13 @@ import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import Expenses from "./routes/expenses";
-import Invoices from "./routes/invoices";
-import Invoice from "./routes/invoice";
+import Crew from "./routes/Crew/crew";
+import Technologies from "./routes/Technology/technologies";
+import Destinations from "./routes/Destination/destinations";
+import Destination from "./routes/Destination/destination";
+import Technology from "./routes/Technology/technology";
+import CrewMember from "./routes/Crew/crewMember";
+import Home from "./routes/home";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -16,17 +20,23 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="expenses" element={<Expenses />} />
-          <Route path="invoices" element={<Invoices />}>
-            <Route
+          <Route index element={<Home />} />
+          <Route path="destination" element={<Destinations />}>
+            <Route path=":destinationName" element={<Destination />} />
+          </Route>
+          <Route path="crew" element={<Crew />}>
+            <Route path=":crewMemberName" element={<CrewMember />} />
+          </Route>
+          <Route path="technology" element={<Technologies />}>
+            {/* <Route
               index
               element={
                 <main style={{ padding: "1rem" }}>
                   <p>Select an invoice</p>
                 </main>
               }
-            />
-            <Route path=":invoiceId" element={<Invoice />} />
+            /> */}
+            <Route path=":technologyName" element={<Technology />} />
           </Route>
           <Route
             path="*"
