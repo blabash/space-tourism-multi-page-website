@@ -1,6 +1,12 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import { PATHS } from ".";
 import "./App.css";
+import { getCrew, getDestinations, getTechnologies } from "./data";
+
+const destinationData = getDestinations();
+const crewData = getCrew();
+const technologyData = getTechnologies();
 
 function App() {
   return (
@@ -13,9 +19,21 @@ function App() {
         }}
       >
         <Link to="/">home</Link> |{" "}
-        <Link to="/destination/the-moon">destination</Link> |{" "}
-        <Link to="/crew/douglas-hurley">crew</Link> |{" "}
-        <Link to="/technology/launch-vehicle">technology</Link>
+        <Link
+          to={`/${PATHS.destination.path}/${destinationData["the-moon"].slug}`}
+        >
+          destination
+        </Link>{" "}
+        |{" "}
+        <Link to={`/${PATHS.crew.path}/${crewData["douglas-hurley"].slug}`}>
+          crew
+        </Link>{" "}
+        |{" "}
+        <Link
+          to={`/${PATHS.technology.path}/${technologyData["launch-vehicle"].slug}`}
+        >
+          technology
+        </Link>
       </nav>
       <main>
         <Outlet />

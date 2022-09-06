@@ -45,6 +45,7 @@ export function deleteInvoice(number: number) {
 
 const destinations = {
   "the-moon": {
+    slug: "the-moon",
     name: "Moon",
     images: {
       png: "./assets/destination/image-moon.png",
@@ -56,6 +57,7 @@ const destinations = {
     travel: "3 days",
   },
   mars: {
+    slug: "mars",
     name: "Mars",
     images: {
       png: "./assets/destination/image-mars.png",
@@ -67,6 +69,7 @@ const destinations = {
     travel: "9 months",
   },
   europa: {
+    slug: "europa",
     name: "Europa",
     images: {
       png: "./assets/destination/image-europa.png",
@@ -78,6 +81,7 @@ const destinations = {
     travel: "3 years",
   },
   titan: {
+    slug: "titan",
     name: "Titan",
     images: {
       png: "./assets/destination/image-titan.png",
@@ -94,6 +98,7 @@ export const getDestinations = () => destinations;
 
 const crew = {
   "douglas-hurley": {
+    slug: "douglas-hurley",
     name: "Douglas Hurley",
     images: {
       png: "./assets/crew/image-douglas-hurley.png",
@@ -103,6 +108,7 @@ const crew = {
     bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
   },
   "mark-shuttleworth": {
+    slug: "mark-shuttleworth",
     name: "Mark Shuttleworth",
     images: {
       png: "./assets/crew/image-mark-shuttleworth.png",
@@ -112,6 +118,7 @@ const crew = {
     bio: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
   },
   "victor-glover": {
+    slug: "victor-glover",
     name: "Victor Glover",
     images: {
       png: "./assets/crew/image-victor-glover.png",
@@ -121,6 +128,7 @@ const crew = {
     bio: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer.",
   },
   "anousheh-ansari": {
+    slug: "anousheh-ansari",
     name: "Anousheh Ansari",
     images: {
       png: "./assets/crew/image-anousheh-ansari.png",
@@ -135,6 +143,7 @@ export const getCrew = () => crew;
 
 const technologies = {
   "launch-vehicle": {
+    slug: "launch-vehicle",
     name: "Launch vehicle",
     images: {
       portrait: "./assets/technology/image-launch-vehicle-portrait.jpg",
@@ -144,6 +153,7 @@ const technologies = {
       "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
   },
   spaceport: {
+    slug: "spaceport",
     name: "Spaceport",
     images: {
       portrait: "./assets/technology/image-spaceport-portrait.jpg",
@@ -153,6 +163,7 @@ const technologies = {
       "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
   },
   "space-capsule": {
+    slug: "space-capsule",
     name: "Space capsule",
     images: {
       portrait: "./assets/technology/image-space-capsule-portrait.jpg",

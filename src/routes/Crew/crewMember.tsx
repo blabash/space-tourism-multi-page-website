@@ -1,19 +1,17 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { PATHSType } from "../..";
 import { getInvoice, deleteInvoice } from "../../data";
 
 type CrewMemberProps = {};
-type CrewMemberParams = {
-  crewMemberName: string;
-};
 
 export default function CrewMember({}: CrewMemberProps) {
-  const params = useParams<CrewMemberParams>();
-  console.log(params);
+  const { crewMemberName } = useParams<PATHSType["crew"]["paramType"]>();
+  console.log(crewMemberName);
   return (
     <div>
       <h3>Crew Member</h3>
-      <p>{JSON.stringify(params, null, 2)}</p>
+      <p>{JSON.stringify(crewMemberName, null, 2)}</p>
     </div>
   );
 }

@@ -12,6 +12,26 @@ import Technology from "./routes/Technology/technology";
 import CrewMember from "./routes/Crew/crewMember";
 import Home from "./routes/home";
 
+export const PATHS = {
+  destination: {
+    path: "destination",
+    param: ":destinationName",
+    paramType: { destinationName: ":destinationName" },
+  },
+  crew: {
+    path: "crew",
+    param: ":crewMemberName",
+    paramType: { crewMemberName: ":crewMemberName" },
+  },
+  technology: {
+    path: "technology",
+    param: ":technologyName",
+    paramType: { technologyName: ":technologyName" },
+  },
+};
+
+export type PATHSType = typeof PATHS;
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
@@ -21,13 +41,13 @@ root.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
-          <Route path="destination" element={<Destinations />}>
-            <Route path=":destinationName" element={<Destination />} />
+          <Route path={PATHS.destination.path} element={<Destinations />}>
+            <Route path={PATHS.destination.param} element={<Destination />} />
           </Route>
-          <Route path="crew" element={<Crew />}>
-            <Route path=":crewMemberName" element={<CrewMember />} />
+          <Route path={PATHS.crew.path} element={<Crew />}>
+            <Route path={PATHS.crew.param} element={<CrewMember />} />
           </Route>
-          <Route path="technology" element={<Technologies />}>
+          <Route path={PATHS.technology.path} element={<Technologies />}>
             {/* <Route
               index
               element={
@@ -36,7 +56,7 @@ root.render(
                 </main>
               }
             /> */}
-            <Route path=":technologyName" element={<Technology />} />
+            <Route path={PATHS.technology.param} element={<Technology />} />
           </Route>
           <Route
             path="*"

@@ -1,25 +1,23 @@
 import React from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { PATHSType } from "../..";
 import { getInvoice, deleteInvoice } from "../../data";
 
 type DestinationProps = {};
 type InvoiceParams = {
   invoiceId: string;
 };
-type DestinationParams = {
-  destinationName: string;
-};
 
 export default function Destination({}: DestinationProps) {
   let navigate = useNavigate();
   let location = useLocation();
-  let params = useParams<DestinationParams>();
-  console.log(params);
+  let { destinationName } = useParams<PATHSType["destination"]["paramType"]>();
+  console.log(destinationName);
   // let invoice = getInvoice(Number(invoiceId));
   return (
     <div>
       <h3>Destination</h3>
-      <p>{JSON.stringify(params, null, 2)}</p>
+      <p>{JSON.stringify(destinationName, null, 2)}</p>
     </div>
   );
   // if (invoice) {
