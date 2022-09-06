@@ -12,8 +12,10 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/">home</Link> | <Link to="/destination">destination</Link> |{" "}
-        <Link to="/crew">crew</Link> | <Link to="/technology">technology</Link>
+        <Link to="/">home</Link> |{" "}
+        <Link to="/destination/the-moon">destination</Link> |{" "}
+        <Link to="/crew/douglas-hurley">crew</Link> |{" "}
+        <Link to="/technology/launch-vehicle">technology</Link>
       </nav>
       <main>
         <Outlet />
