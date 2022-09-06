@@ -10,34 +10,39 @@ const technologyData = getTechnologies();
 
 function App() {
   return (
-    <div className="App">
-      <h1>SPACE TOURISM</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/">home</Link> |{" "}
-        <Link
-          to={`/${PATHS.destination.path}/${destinationData["the-moon"].slug}`}
-        >
-          destination
-        </Link>{" "}
-        |{" "}
-        <Link to={`/${PATHS.crew.path}/${crewData["douglas-hurley"].slug}`}>
-          crew
-        </Link>{" "}
-        |{" "}
-        <Link
-          to={`/${PATHS.technology.path}/${technologyData["launch-vehicle"].slug}`}
-        >
-          technology
-        </Link>
-      </nav>
-      <main>
-        <Outlet />
-      </main>
+    <div className="app-container">
+      <header>
+        <h1>Space Tourism</h1>
+        <nav className="main-nav">
+          <ul>
+            <li>
+              <Link to="/">home</Link>
+            </li>
+            <li>
+              <Link
+                to={`/${PATHS.destination.path}/${destinationData["the-moon"].slug}`}
+              >
+                destination
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/${PATHS.crew.path}/${crewData["douglas-hurley"].slug}`}
+              >
+                crew
+              </Link>
+            </li>
+            <li>
+              <Link
+                to={`/${PATHS.technology.path}/${technologyData["launch-vehicle"].slug}`}
+              >
+                technology
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <Outlet />
     </div>
   );
 }

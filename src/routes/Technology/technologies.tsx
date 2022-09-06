@@ -5,10 +5,10 @@ type TechnologiesProps = {};
 
 export default function Technologies({}: TechnologiesProps) {
   return (
-    <div>
+    <main className="technologies">
       <h2>Technologies</h2>
       <Link to={`/technology/space-capsule`}>Space Capsule</Link>
       <Outlet />
-    </div>
+    </main>
   );
 }

@@ -48,14 +48,6 @@ root.render(
             <Route path={PATHS.crew.param} element={<CrewMember />} />
           </Route>
           <Route path={PATHS.technology.path} element={<Technologies />}>
-            {/* <Route
-              index
-              element={
-                <main style={{ padding: "1rem" }}>
-                  <p>Select an invoice</p>
-                </main>
-              }
-            /> */}
             <Route path={PATHS.technology.param} element={<Technology />} />
           </Route>
           <Route

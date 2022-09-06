@@ -1,4 +1,46 @@
+body {
+  color: white;
+}
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+}
+
+main {
+  display: grid;
+  background-color: black;
+  place-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+main.home {
+  background-image: url(../public/assets/home/background-home-desktop.jpg);
+}
+
+main.crew {
+  background-image: url(../public/assets/crew/background-crew-desktop.jpg);
+}
+
+main.destinations {
+  background-image: url(../public/assets/destination/background-destination-desktop.jpg);
+}
+
+main.technologies {
+  background-image: url(../public/assets/technology/background-technology-desktop.jpg);
+}
+
+.main-nav > ul {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+  padding: 0;
+}
 /* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -21,7 +21,7 @@ export default function Destinations({}: DestinationProps) {
   let [searchParams, setSearchParams] = useSearchParams();
 
   return (
-    <div style={{ display: "flex" }}>
+    <main className="destinations">
       <h2>Destinations</h2>
       <Link to={`/destination/the-moon`}>Moon</Link>
       {/* <nav
@@ -63,6 +63,6 @@ export default function Destinations({}: DestinationProps) {
           ))}
       </nav> */}
       <Outlet />
-    </div>
+    </main>
   );
 }
