@@ -1,5 +1,172 @@
+
+/* ========== Reset ========== */
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* ========== Variables ========== */
+
+:root {
+  font-size: 62.5%;
+  --primary-font: 'Bellefair',
+    serif;
+  --secondary-font: 'Barlow Condensed',
+    sans-serif;
+  
+  --color-white: rgb(255, 255, 255);
+  --color-space-blue: rgb(208, 214, 249);
+  --color-space-black: rgb(11, 13, 23);
+}
+
+/* ========== Typography ========== */
+
 body {
-  color: white;
+  font-size: 1.6rem;
+  color: var(--color-white);
+}
+
+:where(h1, h2, h3, h4, h5, h6, a.nav-text) {
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: var(--primary-font);
+  font-size: 15rem;
+}
+
+h2 {
+  font-family: var(--primary-font);
+  font-size: 10rem;
+}
+
+h3 {
+  font-family: var(--primary-font);
+  font-size: 5.6rem;
+}
+
+h4 {
+  font-family: var(--primary-font);
+  font-size: 3.2rem;
+}
+
+h5 {
+  font-family: var(--secondary-font);
+  font-size: 2.8rem;
+  letter-spacing: .5ch;
+  color: var(--color-space-blue);
+}
+
+h6.subheading-1 {
+  font-family: var(--primary-font);
+  font-size: 2.8rem;
+}
+
+h6.subheading-2 {
+  font-family: var(--secondary-font);
+  font-size: 1.4rem;
+  letter-spacing: .25ch;
+}
+
+a.nav-text {
+  font-family: var(--secondary-font);
+  font-size: 1.6rem;
+  letter-spacing: .27ch;
+}
+
+p {
+  font-family: var(--secondary-font);
+  font-size: 1.6rem;
+  color: var(--color-space-blue);
+  line-height: 2.5rem;
+}
+
+
+/* ========== Layout ========== */
+
+.app-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 header {
@@ -18,12 +185,6 @@ main {
   grid-row: 2 / 3;
 }
 
-.app-container {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-
 [class$="-bg"] {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
@@ -33,28 +194,88 @@ main {
   z-index: -1;
 }
 
-.home-bg {
-  background-image: url(../public/assets/home/background-home-desktop.jpg);
-}
-
-.crew-bg {
-  background-image: url(../public/assets/crew/background-crew-desktop.jpg);
-}
-
-.destinations-bg {
-  background-image: url(../public/assets/destination/background-destination-desktop.jpg);
-}
-
-.technologies-bg {
-  background-image: url(../public/assets/technology/background-technology-desktop.jpg);
-}
-
-.main-nav > ul {
+.main-nav>ul {
   list-style: none;
   display: flex;
   gap: 1em;
   padding: 0;
 }
+
+/* ========== Elements ========== */
+
+
+/* ========== Components ========== */
+
+.home {
+  display: grid;
+  grid-auto-flow: row;
+  text-align: center;
+  padding: 2rem;
+}
+
+.home-bg {
+  background-image: url(../public/assets/home/background-home-mobile.jpg);
+}
+
+.home__explore-btn {
+  border-radius: 50%;
+  font-size: 1.8rem;
+  font-family: var(--primary-font);
+  color: var(--color-space-black);
+  background-color: var(--color-white);
+  width: 15rem;
+  height: 15rem;
+}
+
+.home__explore-btn:hover {
+  box-shadow: 0 0 0 5rem rgb(255 255 255 / 40%);
+}
+
+.destination {
+  display: grid;
+  grid-auto-flow: row;
+  text-align: center;
+  padding: 2rem;
+}
+
+.destination__img {
+  width: 15rem;
+  height: 15rem;
+}
+
+.destination__nav > ul {
+  display: flex;
+  gap: 1rem;
+}
+
+.destinations-bg {
+  background-image: url(../public/assets/destination/background-destination-mobile.jpg);
+}
+
+.crew-bg {
+  background-image: url(../public/assets/crew/background-crew-mobile.jpg);
+}
+
+.technologies-bg {
+  background-image: url(../public/assets/technology/background-technology-mobile.jpg);
+}
+
+.hairline {
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, .4);
+  transform: scaleY(0.5);
+  transform-origin: top right;
+}
+
+/* tablet */
+@media (min-width: 391px) {
+
+}
+
+/* desktop */
+@media (min-width: 821px) {
+}
+
 /* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

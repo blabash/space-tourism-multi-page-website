@@ -12,26 +12,32 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <header>
-      <h1>Space Tourism</h1>
       <nav className="main-nav">
         <ul>
           <li>
-            <Link to="/">home</Link>
+            <Link className="nav-text" to="/">
+              home
+            </Link>
           </li>
           <li>
             <Link
+              className="nav-text"
               to={`/${PATHS.destination.path}/${destinationData["the-moon"].slug}`}
             >
               destination
             </Link>
           </li>
           <li>
-            <Link to={`/${PATHS.crew.path}/${crewData["douglas-hurley"].slug}`}>
+            <Link
+              className="nav-text"
+              to={`/${PATHS.crew.path}/${crewData["douglas-hurley"].slug}`}
+            >
               crew
             </Link>
           </li>
           <li>
             <Link
+              className="nav-text"
               to={`/${PATHS.technology.path}/${technologyData["launch-vehicle"].slug}`}
             >
               technology

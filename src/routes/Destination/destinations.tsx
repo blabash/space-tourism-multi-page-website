@@ -23,8 +23,6 @@ export default function Destinations({}: DestinationProps) {
   return (
     <>
       <div className="destinations-bg">
-        <h2>Destinations</h2>
-        <Link to={`/destination/the-moon`}>Moon</Link>
         {/* <nav
           style={{
             borderRight: "solid 1px",
