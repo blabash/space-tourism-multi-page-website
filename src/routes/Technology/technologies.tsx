@@ -5,10 +5,12 @@ type TechnologiesProps = {};
 
 export default function Technologies({}: TechnologiesProps) {
   return (
-    <main className="technologies">
-      <h2>Technologies</h2>
-      <Link to={`/technology/space-capsule`}>Space Capsule</Link>
+    <>
+      <div className="technologies-bg">
+        <h2>Technologies</h2>
+        <Link to={`/technology/space-capsule`}>Space Capsule</Link>
+      </div>
       <Outlet />
-    </main>
+    </>
   );
 }

@@ -12,13 +12,12 @@ export default function Destination({}: DestinationProps) {
   let navigate = useNavigate();
   let location = useLocation();
   let { destinationName } = useParams<PATHSType["destination"]["paramType"]>();
-  console.log(destinationName);
   // let invoice = getInvoice(Number(invoiceId));
   return (
-    <div>
+    <main>
       <h3>Destination</h3>
       <p>{JSON.stringify(destinationName, null, 2)}</p>
-    </div>
+    </main>
   );
   // if (invoice) {
   //   return (

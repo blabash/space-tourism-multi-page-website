@@ -8,9 +8,9 @@ export default function Technology({}: Props) {
   const { technologyName } = useParams<PATHSType["technology"]["paramType"]>();
   console.log(technologyName);
   return (
-    <div>
+    <main>
       <h3>Technology</h3>
       <p>{JSON.stringify(technologyName, null, 2)}</p>
-    </div>
+    </main>
   );
 }

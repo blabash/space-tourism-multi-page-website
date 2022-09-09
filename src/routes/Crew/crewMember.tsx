@@ -9,9 +9,9 @@ export default function CrewMember({}: CrewMemberProps) {
   const { crewMemberName } = useParams<PATHSType["crew"]["paramType"]>();
   console.log(crewMemberName);
   return (
-    <div>
+    <main>
       <h3>Crew Member</h3>
       <p>{JSON.stringify(crewMemberName, null, 2)}</p>
-    </div>
+    </main>
   );
 }

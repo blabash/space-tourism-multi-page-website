@@ -5,10 +5,12 @@ type CrewProps = {};
 
 export default function Crew({}: CrewProps) {
   return (
-    <main className="crew">
-      <h2>Crew</h2>
-      <Link to={`/crew/victor-glover`}>Victor Glover</Link>
+    <>
+      <div className="crew-bg">
+        <h2>Crew</h2>
+        <Link to={`/crew/victor-glover`}>Victor Glover</Link>
+      </div>
       <Outlet />
-    </main>
+    </>
   );
 }

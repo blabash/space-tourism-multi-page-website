@@ -6,32 +6,46 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  position: fixed;
   width: 100%;
+  grid-column: 1/ 2;
+  grid-row: 1 / 2;
 }
 
 main {
   display: grid;
-  background-color: black;
   place-items: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
 
-main.home {
+.app-container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+[class$="-bg"] {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.home-bg {
   background-image: url(../public/assets/home/background-home-desktop.jpg);
 }
 
-main.crew {
+.crew-bg {
   background-image: url(../public/assets/crew/background-crew-desktop.jpg);
 }
 
-main.destinations {
+.destinations-bg {
   background-image: url(../public/assets/destination/background-destination-desktop.jpg);
 }
 
-main.technologies {
+.technologies-bg {
   background-image: url(../public/assets/technology/background-technology-desktop.jpg);
 }
 
